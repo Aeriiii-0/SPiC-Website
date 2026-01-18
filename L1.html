@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPiC: Comprehensive Ethics & Morality Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-green: #2d5a27;
+        --soft-sage: #a3b18a;
+        --terracotta: #e07a5f;
+        --cream: #fdfcf0;
+        --dark-gray: #343a40;
+      }
+
+      body {
+        background-color: var(--cream);
+        font-family: "Lato", sans-serif;
+        color: var(--dark-gray);
+        scroll-behavior: smooth;
+        line-height: 1.7;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary-green) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        color: #fff !important;
+      }
+      .nav-link:hover,
+      .dropdown-item:hover {
+        color: var(--soft-sage) !important;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .dropdown-menu {
+        background-color: var(--primary-green);
+        border: 1px solid var(--soft-sage);
+      }
+      .dropdown-item {
+        color: #fff !important;
+      }
+
+      /* Hero */
+      .hero {
+        background:
+          linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.9)),
+          url("https://www.transparenttextures.com/patterns/paper.png");
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+      }
+
+      /* Professional Image Placeholder */
+      .image-placeholder-box {
+        background-color: #fff;
+        border: 2px dashed var(--soft-sage);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 350px;
+        color: var(--soft-sage);
+        margin: 40px 0;
+        text-align: center;
+        padding: 30px;
+        transition: all 0.3s ease;
+      }
+      .image-placeholder-box:hover {
+        border-color: var(--terracotta);
+        color: var(--terracotta);
+        background-color: #fafbf7;
+        transform: scale(1.01);
+      }
+      .placeholder-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+
+      /* Layout Elements */
+      .content-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 50px;
+      }
+      .accent-line {
+        width: 60px;
+        height: 5px;
+        background-color: var(--terracotta);
+        margin-bottom: 30px;
+      }
+      .philosopher-card {
+        border: none;
+        border-top: 5px solid var(--terracotta);
+        border-radius: 15px;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .philosopher-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .badge-custom {
+        background-color: var(--soft-sage);
+        color: var(--primary-green);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        margin: 5px;
+        display: inline-block;
+      }
+
+      footer {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SPiC PORTAL</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Lesson 1</a
+              >
+              <ul class="dropdown-menu mx-auto text-center">
+                <li>
+                  <a class="dropdown-item" href="#intro"
+                    >Intro & Misconceptions</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#history">Historical Roots</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#eastern">Eastern Wisdom</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#frameworks"
+                    >Western Frameworks</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#pillars">The 4 Pillars</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#morality">Morality Systems</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L2.html">Lesson 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L3.html">Lesson 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L4.html">Lesson 4</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L5.html">Lesson 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <p class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px">
+          Polytechnic University of the Philippines
+        </p>
+        <h1 class="display-3 fw-bold">Ethics and Morality</h1>
+        <p class="lead mt-3">
+          Foundations, Perspectives, and Contemporary Applications in Computing
+        </p>
+      </div>
+    </header>
+
+    <div class="container mt-5">
+      <section id="intro" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Defining the Ethical Landscape</h2>
+          <div class="row g-5">
+            <div class="col-lg-7">
+              <p class="lead">
+                Ethics originated from the Greek word <strong>"ethos"</strong>,
+                meaning "way of living."
+              </p>
+              <p>
+                It is a branch of philosophy dedicated to the study of human
+                behavior, particularly in social situations. It serves as an
+                external framework designed to guide behavior, uphold public
+                trust, and help individuals lead virtuous lives by making
+                informed choices between good and evil.
+              </p>
+
+              <h4 class="mt-4">The Baumhart Study (1960s)</h4>
+              <p>
+                Sociologist and Jesuit priest Rev. Raymond Baumhart found that
+                most people equate ethics with subjective markers rather than
+                universal principles. However, he argued that ethics is
+                <strong>NOT</strong> about:
+              </p>
+
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <strong>Feelings</strong>
+                  <p class="small text-muted">
+                    Gut feelings can provide answers but often stop us from
+                    behaving ethically when fears or interests conflict.
+                    Feelings are subjective, inconsistent, and can be biased.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <strong>Religious Beliefs</strong>
+                  <p class="small text-muted">
+                    Religion offers moral guidance for believers but does not
+                    provide a comprehensive basis for right and wrong in a
+                    diverse, global society.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="image-placeholder-box">
+                <span class="placeholder-icon">📊</span>
+                <p class="fw-bold">Baumhart's Misconception Chart</p>
+                <p class="small">
+                  Insert visual summary comparing Feelings, Religion, Law, and
+                  Norms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="history" class="mb-5">
+        <h2 class="text-center mb-5">Historical Foundations</h2>
+
+        <div class="content-card mb-4">
+          <p>
+            Ancient literary works—the <em>Epic of Gilgamesh</em>, Homer's
+            <em>Iliad</em>, and the Icelandic <em>Eddas</em>—insightfully
+            highlight courage and justice as the paramount traits of leadership.
+            They suggest that actions against malevolent entities or deviant
+            behavior can be morally justified.
+          </p>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <div class="card philosopher-card p-4 text-center">
+              <h3>Socrates</h3>
+              <p class="small">
+                Believed happiness is evident in terms of a long-term effect on
+                the soul. He taught that no one knowingly does wrong; people
+                only act badly due to ignorance.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card philosopher-card p-4 text-center">
+              <h3>Plato</h3>
+              <p class="small">
+                Argued for a soul in harmony. Morality is the result of reason
+                ruling over spirit and appetite. True morality stems from
+                understanding the "Form of the Good."
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card philosopher-card p-4 text-center">
+              <h3>Aristotle</h3>
+              <p class="small">
+                The ultimate goal is <strong>Eudaimonia</strong> (human
+                flourishing). Virtues are character traits that enable us to
+                function excellently as human beings.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-placeholder-box">
+          <span class="placeholder-icon">🏛️</span>
+          <p class="fw-bold">Plato's Tripartite Soul Diagram</p>
+          <p class="small">
+            Illustration showing Reason (Logistikon), Spirit (Thymoeides), and
+            Appetite (Epithymetikon).
+          </p>
+        </div>
+      </section>
+
+      <section id="eastern" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-5">Eastern Ethical Systems</h2>
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <h4>Dharma & Karma</h4>
+              <p>
+                Dharma refers to the cosmic order or universal law. On an
+                individual level, it is the righteous duty one must follow to
+                live in harmony with the universe.
+              </p>
+              <ul>
+                <li>
+                  <strong>Svadharma:</strong> Personal role in life (e.g.,
+                  student, parent).
+                </li>
+                <li>
+                  <strong>Sanatana Dharma:</strong> Eternal duties like
+                  non-violence (ahimsa) and compassion.
+                </li>
+              </ul>
+              <p
+                class="small text-muted border-start border-3 border-terracotta ps-3"
+              >
+                Karma is the principle of cause and effect; acting in accordance
+                with dharma leads to spiritual liberation (Moksha).
+              </p>
+            </div>
+            <div class="col-md-6">
+              <h4>Buddhism & Confucianism</h4>
+              <p>
+                The <strong>Noble Eightfold Path</strong> provides a framework
+                for ethical conduct through Right Speech, Action, and
+                Livelihood.
+              </p>
+              <p>
+                <strong>Confucius</strong> emphasized self-cultivation through
+                the Five Constants: <em>Ren</em> (benevolence),
+                <em>Li</em> (propriety), <em>Yi</em> (righteousness),
+                <em>Zhi</em> (wisdom), and <em>Xin</em> (sincerity).
+              </p>
+            </div>
+          </div>
+          <div class="image-placeholder-box">
+            <span class="placeholder-icon">☸️</span>
+            <p class="fw-bold">
+              The Siddhartha Gautama Buddha Eightfold Path Wheel
+            </p>
+            <p class="small">
+              Insert the visual wheel detailing the paths to mental discipline
+              and wisdom.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="frameworks" class="mb-5">
+        <h2 class="text-center mb-5">Major Western Frameworks</h2>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="card p-4 h-100">
+              <h4 class="text-primary">Natural Law Theory</h4>
+              <p class="text-muted small">St. Thomas Aquinas</p>
+              <p>
+                Universal moral principles are inherent in human nature and
+                discoverable by reason. He proposed a hierarchy: Eternal Law,
+                Divine Law, Natural Law, and Human Law.
+              </p>
+              <div class="image-placeholder-box py-3" style="min-height: 180px">
+                <p class="small">Hierarchy of Law Diagram</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card p-4 h-100">
+              <h4 class="text-primary">Kantian Deontology</h4>
+              <p class="text-muted small">Immanuel Kant</p>
+              <p>
+                Moral decisions must be based on <strong>Duty</strong>. He
+                posited the <em>Categorical Imperative</em>—a universal and
+                unconditional moral law that applies to all rational beings
+                regardless of outcome.
+              </p>
+              <div class="image-placeholder-box py-3" style="min-height: 180px">
+                <p class="small">Kantian</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card p-4 h-100">
+              <h4 class="text-primary">Utilitarianism</h4>
+              <p class="text-muted small">Jeremy Bentham & J.S. Mill</p>
+              <p>
+                Morally correct behaviors are those that yield the highest level
+                of overall happiness for the largest possible group. It is often
+                summarized as "the end justifies the means."
+              </p>
+              <div class="image-placeholder-box py-3" style="min-height: 180px">
+                <p class="small">Utilitarianism vs Deontology Scale</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pillars" class="my-5">
+        <div class="text-center mb-5">
+          <div class="accent-line mx-auto"></div>
+          <h2 class="display-5">The 4 Pillars of Ethical Practice</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            These foundational principles serve as a framework for analyzing
+            complex moral dilemmas in professional computing and social
+            environments.
+          </p>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="pe-md-4">
+              <h3 class="h1 fw-bold mb-3" style="color: var(--terracotta)">
+                01. Autonomy
+              </h3>
+              <p>
+                This principle emphasizes the individual's right to
+                <strong>self-determination</strong>. In professional practice,
+                it involves respecting a person's capacity to make informed
+                decisions without coercion or manipulation.
+              </p>
+              <p class="small border-start border-3 ps-3 border-success">
+                It requires absolute transparency and the provision of all
+                necessary information, ensuring that consent is always valid and
+                voluntary.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box" style="min-height: 200px">
+              <span class="placeholder-icon">👤</span>
+              <p class="small">Insert Image: Autonomy & Informed Consent</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="ps-md-4">
+              <h3 class="h1 fw-bold mb-3" style="color: var(--terracotta)">
+                02. Beneficence
+              </h3>
+              <p>
+                Beneficence is the
+                <strong>active obligation to do good</strong>. It goes beyond
+                simply avoiding harm; it requires proactive steps to contribute
+                to the welfare of others and promote the general well-being of
+                the community.
+              </p>
+              <p class="small border-start border-3 ps-3 border-success">
+                Professionals must actively seek ways for their systems and
+                policies to provide positive value to society.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="image-placeholder-box" style="min-height: 200px">
+              <span class="placeholder-icon">✨</span>
+              <p class="small">Insert Image: Proactive Welfare & Goodness</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="pe-md-4">
+              <h3 class="h1 fw-bold mb-3" style="color: var(--terracotta)">
+                03. Nonmaleficence
+              </h3>
+              <p>
+                Often considered the most foundational concept, this dictates
+                the duty to <strong>"do no harm."</strong> It involves avoiding
+                the infliction of unnecessary pain, suffering, or risk of loss.
+              </p>
+              <p class="small border-start border-3 ps-3 border-success">
+                This requires a rigorous evaluation of potential negative
+                impacts before implementing new technologies or computing
+                systems.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box" style="min-height: 200px">
+              <span class="placeholder-icon">🛡️</span>
+              <p class="small">Insert Image: Safety & Risk Assessment</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="ps-md-4">
+              <h3 class="h1 fw-bold mb-3" style="color: var(--terracotta)">
+                04. Justice
+              </h3>
+              <p>
+                Justice is centered on <strong>fairness and equity</strong>. It
+                ensures that the benefits and burdens of a system are
+                distributed fairly among all individuals, mandating equal
+                treatment and access.
+              </p>
+              <p class="small border-start border-3 ps-3 border-success">
+                In computing, this means ensuring that technology does not
+                discriminate based on social status, background, or identity.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="image-placeholder-box" style="min-height: 200px">
+              <span class="placeholder-icon">⚖️</span>
+              <p class="small">Insert Image: Equity & Fair Access</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="morality" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Morality Frameworks</h2>
+          <p>
+            While Ethics are agreed rules for a group,
+            <strong>Morality</strong> is a personal code formed by upbringing
+            and life experiences. It is often the "gut feeling" tied to one's
+            identity.
+          </p>
+
+          <div class="row g-4 mt-3">
+            <div class="col-md-6">
+              <div class="p-4 bg-light rounded-3">
+                <h5>Moral Absolutism</h5>
+                <p class="small">
+                  Certain actions are inherently right or wrong regardless of
+                  the context, consequences, or intentions (e.g., lying is
+                  always wrong even to save a life).
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-4 bg-light rounded-3">
+                <h5>Moral Relativism</h5>
+                <p class="small">
+                  Judgments are relative to cultural context or historical
+                  periods. No single universal moral code exists; different
+                  systems are equally valid.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder-box">
+            <span class="placeholder-icon">🌓</span>
+            <p class="fw-bold">Moral Realism vs. Relativism Diagram</p>
+            <p class="small">
+              Visualizing objective facts vs. contextual standpoint truths.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="text-center">
+      <div class="container">
+        <p class="fw-bold mb-1">Social and Professional Issues in Computing</p>
+        <p class="small mb-4">
+          Polytechnic University of the Philippines - Biñan Campus
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <p class="small opacity-75">
+              Course Instructor: Rowell L. Marquina
+            </p>
+            <p class="small opacity-50">
+              Website content synthesized from Lesson 1 source materials.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

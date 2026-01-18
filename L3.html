@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPiC Lesson 3: Information Privacy | PUP Biñan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-green: #2d5a27;
+        --soft-sage: #a3b18a;
+        --terracotta: #e07a5f;
+        --cream: #fdfcf0;
+        --dark-gray: #343a40;
+      }
+
+      body {
+        background-color: var(--cream);
+        font-family: "Lato", sans-serif;
+        color: var(--dark-gray);
+        scroll-behavior: smooth;
+        line-height: 1.8;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary-green) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        color: #fff !important;
+      }
+      .nav-link:hover,
+      .dropdown-item:hover {
+        color: var(--soft-sage) !important;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .dropdown-menu {
+        background-color: var(--primary-green);
+        border: 1px solid var(--soft-sage);
+      }
+      .dropdown-item {
+        color: #fff !important;
+      }
+
+      /* Hero */
+      .hero {
+        background:
+          linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.9)),
+          url("https://www.transparenttextures.com/patterns/paper.png");
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+      }
+
+      /* Image Placeholders */
+      .image-placeholder-box {
+        background-color: #fff;
+        border: 2px dashed var(--soft-sage);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 350px;
+        color: var(--soft-sage);
+        margin: 40px 0;
+        text-align: center;
+        padding: 30px;
+        transition: all 0.3s ease;
+      }
+      .image-placeholder-box:hover {
+        border-color: var(--terracotta);
+        color: var(--terracotta);
+        background-color: #fafbf7;
+      }
+      .placeholder-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+
+      /* Alternating Layout for Components */
+      .feature-num {
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--soft-sage);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .feature-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border-bottom: 5px solid var(--terracotta);
+      }
+
+      /* Content Cards */
+      .content-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 50px;
+      }
+      .accent-line {
+        width: 60px;
+        height: 5px;
+        background-color: var(--terracotta);
+        margin-bottom: 30px;
+      }
+      .accent-line-center {
+        width: 60px;
+        height: 5px;
+        background-color: var(--terracotta);
+        margin: 0 auto 30px;
+      }
+
+      .concept-badge {
+        background-color: var(--soft-sage);
+        color: var(--primary-green);
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        margin: 5px;
+        display: inline-block;
+      }
+
+      footer {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 60px 0;
+        margin-top: 80px;
+      }
+      /* Redesigned Violations Section */
+      .violation-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        border-left: 8px solid #8b0000; /* Dark Red */
+        margin-bottom: 30px;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .violation-card:hover {
+        transform: scale(1.01);
+        box-shadow: 0 10px 25px rgba(139, 0, 0, 0.1);
+      }
+      .violation-icon {
+        font-size: 2.5rem;
+        color: #8b0000;
+        background: #fff5f5;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Redesigned Protections Section (Shield Design) */
+      .shield-card {
+        text-align: center;
+        padding: 40px;
+        background: var(--primary-green);
+        color: white;
+        border-radius: 25px;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .shield-card:hover {
+        background: #24491f;
+        transform: translateY(-5px);
+      }
+      .shield-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        display: block;
+      }
+      .shield-card h5 {
+        color: var(--soft-sage);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SPiC PORTAL</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="L1.html">Lesson 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L2.html">Lesson 2</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Lesson 3</a
+              >
+              <ul class="dropdown-menu mx-auto text-center">
+                <li><a class="dropdown-item" href="#intro">Introduction</a></li>
+                <li>
+                  <a class="dropdown-item" href="#components"
+                    >Four Components</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#rights">Individual Rights</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#security">Data Security</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#violations"
+                    >Violations & Misuse</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#protection"
+                    >Protection Measures</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L4.html">Lesson 4</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L5.html">Lesson 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <p class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px">
+          Lesson 3: Information Privacy
+        </p>
+        <h1 class="display-3 fw-bold">Guardians of the Digital Self</h1>
+        <p class="lead mt-3">
+          Navigating the Relationship Between Data, Technology, and Human Rights
+        </p>
+      </div>
+    </header>
+
+    <div class="container mt-5">
+      <section id="intro" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Defining Information Privacy</h2>
+          <p class="lead">
+            Information Privacy, also known as data privacy or data protection,
+            refers to the relationship between the collection and dissemination
+            of data, technology, and the public expectation of privacy.
+          </p>
+
+          <div class="row align-items-center mt-5">
+            <div class="col-lg-6">
+              <div
+                class="p-5 rounded-4 shadow-sm position-relative overflow-hidden"
+                style="
+                  background-color: var(--soft-sage);
+                  border-left: 10px solid var(--terracotta);
+                "
+              >
+                <span
+                  class="position-absolute opacity-10"
+                  style="
+                    font-size: 8rem;
+                    top: -20px;
+                    right: 10px;
+                    font-family: serif;
+                    color: var(--primary-green);
+                  "
+                  >"</span
+                >
+
+                <div class="position-relative">
+                  <h4
+                    class="fw-bold mb-3"
+                    style="
+                      color: var(--primary-green);
+                      font-family: &quot;Playfair Display&quot;, serif;
+                    "
+                  >
+                    "You have zero privacy anyway. Get over it."
+                  </h4>
+                  <p
+                    class="mb-0 fw-bold text-uppercase small tracking-widest"
+                    style="color: var(--terracotta); letter-spacing: 1px"
+                  >
+                    — Scott McNealy
+                  </p>
+                  <p class="small text-muted mb-0">
+                    Former CEO of Sun Microsystems
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 ps-2">
+                <p
+                  class="lead"
+                  style="color: var(--dark-gray); line-height: 1.6"
+                >
+                  While this statement sparked significant controversy, it
+                  highlights a stark reality of the digital age.
+                </p>
+                <p>
+                  It is undeniable that rapid advances in technology have
+                  significantly simplified the process of acquiring, storing,
+                  and sharing individual information. This evolution has made
+                  robust privacy frameworks and ethical standards more essential
+                  than ever to protect the digital integrity of every citizen.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="image-placeholder-box">
+                <span class="placeholder-icon">🌐</span>
+                <p class="fw-bold">Digital Connectivity Illustration</p>
+                <p class="small">
+                  Visual concept of data flow and technology integration (Slide
+                  1-3).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="components" class="mb-5">
+        <div class="text-center mb-5">
+          <div class="accent-line-center"></div>
+          <h2 class="display-5">The Four Components of Privacy</h2>
+          <p class="lead text-muted">
+            According to Jerry Durlak, privacy is a fundamental aspect of human
+            existence encompassing four distinct pillars.
+          </p>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-num">01</div>
+              <h3 class="mb-3">Solitude</h3>
+              <p>
+                The right to be free from unwanted observation or intrusion into
+                one's personal space, thoughts, and activities. It includes the
+                ability to disconnect from the digital world and control who
+                monitors your online presence.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">🏠</span>
+              <p class="small">
+                Visual: Personal space and digital disconnection (Slide 7).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="feature-card">
+              <div class="feature-num">02</div>
+              <h3 class="mb-3">Anonymity</h3>
+              <p>
+                The right to express oneself or engage in activities without
+                revealing one's identity. It safeguards personal freedom,
+                prevents discrimination, and encourages participation without
+                fear of social stigma or repercussions.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">🕶️</span>
+              <p class="small">
+                Visual: Masked identity or incognito concepts (Slide 9).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature-num">03</div>
+              <h3 class="mb-3">Intimacy</h3>
+              <p>
+                The right to control deeply personal and sensitive information
+                fundamental to one's sense of self and well-being. This covers
+                health records, financial status, location data, biometric
+                identity, and sexual orientation.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">❤️</span>
+              <p class="small">
+                Visual: Protection of deeply personal data points (Slide 11).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="feature-card">
+              <div class="feature-num">04</div>
+              <h3 class="mb-3">Reserve</h3>
+              <p>
+                The right to control the dissemination methods of personal
+                information. Individuals may reserve the right to access,
+                correct, restrict, or erase their data (the "right to be
+                forgotten"), ensuring data portability between systems.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">🔒</span>
+              <p class="small">
+                Visual: Managing personal data boundaries (Slide 13).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rights" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Individual Control & Rights</h2>
+          <p>
+            Control over personal information is the ability of individuals to
+            decide how their data is gathered and utilized. Every individual
+            should have clear insight into what data is being collected, how it
+            is used, and who has access to it.
+          </p>
+
+          <div class="row g-4 mt-3">
+            <div class="col-md-4">
+              <div class="p-4 border rounded text-center">
+                <h6>Consent & Access</h6>
+                <p class="small">
+                  The power to give or withhold permission for data collection
+                  and to review any information organizations currently hold.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-4 border rounded text-center">
+                <h6>Correction & Erasure</h6>
+                <p class="small">
+                  The right to fix inaccuracies or request the complete deletion
+                  of personal records under specific circumstances.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-4 border rounded text-center">
+                <h6>Objection & Portability</h6>
+                <p class="small">
+                  The ability to block data processing for profiling and
+                  transfer information in structured formats between services.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 p-4 bg-light rounded-4">
+            <h4 class="mb-3">The Principle of Data Minimization</h4>
+            <p>
+              Organizations must collect, process, and store only the amount of
+              data absolutely necessary for a specific, declared purpose. This
+              focuses on necessity, limited scope, and short-term
+              retention—ensuring data is deleted or anonymized once the purpose
+              is fulfilled.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="security" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Data Security & Privacy Types</h2>
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <p>
+                Data Security refers to the protective tools implemented to
+                safeguard digital information from theft or corruption. Its
+                three pillars are:
+              </p>
+              <ul class="mt-3">
+                <li class="mb-3">
+                  <strong>Confidentiality:</strong> Data remains private and
+                  accessible only to authorized individuals.
+                </li>
+                <li class="mb-3">
+                  <strong>Integrity:</strong> Maintaining accurate data and
+                  preventing unauthorized modification.
+                </li>
+                <li>
+                  <strong>Availability:</strong> Ensuring data is accessible
+                  when needed by authorized users.
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <div class="p-4 bg-dark text-white rounded shadow">
+                <h5 class="text-terracotta">Spheres of Privacy</h5>
+                <div class="small mt-3">
+                  <p>
+                    <strong>Personal Privacy:</strong> Controlling personal
+                    space and boundaries against physical or digital intrusion.
+                  </p>
+                  <p>
+                    <strong>Informational Privacy:</strong> Safeguarding
+                    specific records like financial histories, medical data, and
+                    search logs.
+                  </p>
+                  <p>
+                    <strong>Institutional Privacy:</strong> The right of
+                    organizations to protect business strategies, employee data,
+                    and trade secrets.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image-placeholder-box mt-4">
+            <span class="placeholder-icon">🛡️</span>
+            <p class="fw-bold">Security & Privacy Convergence</p>
+            <p class="small">
+              Visualizing the intersection of individual rights and
+              organizational security (Slide 20-24).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="violations" class="mb-5">
+        <h2 class="text-center mb-5">Privacy Violations & Misuse</h2>
+
+        <div class="violation-card">
+          <div class="row g-0">
+            <div class="col-md-2 violation-icon">🚫</div>
+            <div class="col-md-10 p-4">
+              <h4>Intrusions</h4>
+              <p class="mb-0">
+                The act of violating privacy by unlawfully entering, taking
+                control of, or obtaining possession of another person's digital
+                or physical property.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="violation-card">
+          <div class="row g-0">
+            <div class="col-md-2 violation-icon">📡</div>
+            <div class="col-md-10 p-4">
+              <h4>Interception</h4>
+              <p class="mb-0">
+                Unauthorized access to private information through eavesdropping
+                or entering a private communication between two or more persons.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="violation-card">
+          <div class="row g-0">
+            <div class="col-md-2 violation-icon">⚠️</div>
+            <div class="col-md-10 p-4">
+              <h4>Data Misuse</h4>
+              <p>
+                Utilizing information in manners that deviate from its intended
+                and declared purpose. Key types include:
+              </p>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="p-2 border rounded bg-light small">
+                    <strong>Commingling:</strong> Repurposing data collected for
+                    one audience for a distinct, undeclared goal later.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-2 border rounded bg-light small">
+                    <strong>Personal Benefit:</strong> Exploiting professional
+                    access to private data for individual gain.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-2 border rounded bg-light small">
+                    <strong>Ambiguity:</strong> Neglecting to clearly explain
+                    data gathering methods and specific usage purposes.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="protection" class="mb-5">
+        <h2 class="text-center mb-5">Privacy Protection & Civil Liberties</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card text-center p-4">
+              <h5 class="mb-3">Technical Measures</h5>
+              <p class="small">
+                Using encryption, web filtering, and other secure technologies
+                to ensure information confidentiality. Users are also encouraged
+                to practice self-regulation.
+              </p>
+              <div class="image-placeholder-box mt-3" style="min-height: 150px">
+                <span class="small">Security Infrastructure Visual</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card text-center p-4">
+              <h5 class="mb-3">Contractual Measures</h5>
+              <p class="small">
+                Executed agreements and policies that determine how information
+                is shared and protect it from unauthorized reproduction or
+                distribution.
+              </p>
+              <div class="image-placeholder-box mt-3" style="min-height: 150px">
+                <span class="small">Policy & Agreements Visual</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card text-center p-4">
+              <h5 class="mb-3">Legal Measures</h5>
+              <p class="small">
+                The promulgation of state and international laws specifically
+                designed to protect the confidentiality and integrity of citizen
+                information.
+              </p>
+              <div class="image-placeholder-box mt-3" style="min-height: 150px">
+                <span class="small">Law & Legislation Visual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="text-center">
+      <div class="container">
+        <p class="fw-bold mb-1">
+          CITE: College of Information Technology and Engineering
+        </p>
+        <p class="small mb-4">
+          Polytechnic University of the Philippines - Biñan Campus
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <p class="small opacity-75">Instructor: Rowell L. Marquina</p>
+            <p class="small opacity-50">
+              This portal serves as a comprehensive study resource for Lesson 3:
+              Information Privacy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

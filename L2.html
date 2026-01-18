@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPiC Lesson 2: Data Privacy | PUP Biñan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-green: #2d5a27;
+        --soft-sage: #a3b18a;
+        --terracotta: #e07a5f;
+        --cream: #fdfcf0;
+        --dark-gray: #343a40;
+      }
+
+      body {
+        background-color: var(--cream);
+        font-family: "Lato", sans-serif;
+        color: var(--dark-gray);
+        scroll-behavior: smooth;
+        line-height: 1.8;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary-green) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        color: #fff !important;
+      }
+      .nav-link:hover,
+      .dropdown-item:hover {
+        color: var(--soft-sage) !important;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .dropdown-menu {
+        background-color: var(--primary-green);
+        border: 1px solid var(--soft-sage);
+      }
+      .dropdown-item {
+        color: #fff !important;
+      }
+
+      /* Hero */
+      .hero {
+        background:
+          linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.9)),
+          url("https://www.transparenttextures.com/patterns/paper.png");
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+      }
+
+      /* Image Placeholders */
+      .image-placeholder-box {
+        background-color: #fff;
+        border: 2px dashed var(--soft-sage);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 350px;
+        color: var(--soft-sage);
+        margin: 40px 0;
+        text-align: center;
+        padding: 30px;
+        transition: all 0.3s ease;
+      }
+      .image-placeholder-box:hover {
+        border-color: var(--terracotta);
+        color: var(--terracotta);
+        background-color: #fafbf7;
+      }
+      .placeholder-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+
+      /* Alternating Principles Layout */
+      .principle-num {
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--soft-sage);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .principle-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border-bottom: 5px solid var(--terracotta);
+      }
+
+      /* Content Cards */
+      .content-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 50px;
+      }
+      .accent-line {
+        width: 60px;
+        height: 5px;
+        background-color: var(--terracotta);
+        margin-bottom: 30px;
+      }
+
+      .list-custom li {
+        margin-bottom: 15px;
+      }
+      .badge-privacy {
+        background-color: var(--soft-sage);
+        color: var(--primary-green);
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        margin: 5px;
+        display: inline-block;
+      }
+
+      footer {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 60px 0;
+        margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SPiC PORTAL</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="L1.html">Lesson 1</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Lesson 2</a
+              >
+              <ul class="dropdown-menu mx-auto text-center">
+                <li>
+                  <a class="dropdown-item" href="#history"
+                    >Historical Context</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#principles"
+                    >Ethical Principles</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#pii">Data Categories</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#capitalism"
+                    >Surveillance Capitalism</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#law">Data Privacy Act</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#it-prof">IT Responsibility</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L3.html">Lesson 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L4.html">Lesson 4</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L5.html">Lesson 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <p class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px">
+          Social and Professional Issues in Computing
+        </p>
+        <h1 class="display-3 fw-bold">Beyond the Firewall</h1>
+        <p class="lead mt-3">
+          Understanding Data Privacy as a Critical Ethical Foundation
+        </p>
+      </div>
+    </header>
+
+    <div class="container mt-5">
+      <section id="history" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">
+            Historical Context: From Anonymity to Ubiquitous Surveillance
+          </h2>
+          <p class="lead">
+            Privacy is not a new concept, but its challenges have fundamentally
+            shifted as technology evolved.
+          </p>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-3">
+              <h5 class="text-terracotta">Pre-digital Era</h5>
+              <p class="small">
+                Privacy was largely physical. Conversations were private unless
+                someone was physically eavesdropping, and mail was sealed to
+                ensure confidentiality.
+              </p>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="text-terracotta">1960s - 1970s</h5>
+              <p class="small">
+                The first concerns emerged with the rise of computers, as
+                governments gained the ability to create massive databases to
+                store citizen information.
+              </p>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="text-terracotta">1990s</h5>
+              <p class="small">
+                Internet commercialization and E-commerce led to the systematic
+                collection of user data for marketing and targeted advertising.
+              </p>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="text-terracotta">2000s - Present</h5>
+              <p class="small">
+                Smartphones and social media create a constant digital
+                footprint. Devices now track location and behavior in ways users
+                often don't fully comprehend.
+              </p>
+            </div>
+          </div>
+
+          <div class="image-placeholder-box">
+            <span class="placeholder-icon">⏳</span>
+            <p class="fw-bold">Evolution of Surveillance Illustration</p>
+            <p class="small">
+              Visual representation of privacy changing from sealed letters to
+              digital eyes (Slides 4-5).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="mb-5">
+        <h2 class="text-center mb-5">The Ethical Principles at Stake</h2>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="principle-card">
+              <div class="principle-num">01</div>
+              <h3 class="mb-3">Autonomy and Self-Determination</h3>
+              <p>
+                Privacy is fundamental to our ability to live a life of our own
+                choosing. When our personal data is harvested and used to
+                manipulate our behavior or steer our decisions, our individual
+                autonomy is significantly diminished.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">👤</span>
+              <p class="small">
+                Visual: Digital manipulation of choice (Slide 6).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="principle-card">
+              <div class="principle-num">02</div>
+              <h3 class="mb-3">Justice and Fairness</h3>
+              <p>
+                The collection and usage of data can create or reinforce deep
+                social inequalities. For instance, using biased data sets to
+                deny individuals loans or employment based on perceived risk
+                factors is a critical matter of social justice.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">⚖️</span>
+              <p class="small">Visual: Data inequality and bias (Slide 6).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="principle-card">
+              <div class="principle-num">03</div>
+              <h3 class="mb-3">The Foundation of Trust</h3>
+              <p>
+                The modern data economy cannot operate without trust. If people
+                lose confidence that companies and institutions will handle
+                their data responsibly, they will naturally disengage from
+                services, leading to wider societal friction.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box">
+              <span class="placeholder-icon">🤝</span>
+              <p class="small">
+                Visual: Erosion of institutional trust (Slide 6).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pii" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Personally Identifiable Information (PII)</h2>
+          <p>
+            PII refers to any information that can be used to identify a
+            specific individual, either on its own or when combined with other
+            available data.
+          </p>
+
+          <div class="row g-4 mb-5">
+            <div class="col-md-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-success"
+              >
+                <h4 class="text-success">Non-sensitive PII</h4>
+                <p>
+                  Publicly available information that typically poses little to
+                  no risk if disclosed. Examples include first names, job
+                  titles, zip codes, business emails, and general demographic
+                  data.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-danger"
+              >
+                <h4 class="text-danger">Sensitive PII</h4>
+                <p>
+                  Private information that can directly identify an individual.
+                  This requires the highest level of security and often has
+                  specific legal protections. Examples include SSNs, bank
+                  accounts, and biometric data.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder-box">
+            <span class="placeholder-icon">🆔</span>
+            <p class="fw-bold">Categorization of PII Mind Map</p>
+            <p class="small">
+              Insert chart showing different branches of sensitive data like PHI
+              and Financial info (Slide 10).
+            </p>
+          </div>
+
+          <h4 class="mt-5">Special Types of Sensitive Data</h4>
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <div class="p-3 border rounded">
+                <h6>Protected Health Information (PHI)</h6>
+                <p class="small text-muted">
+                  Includes medical records, treatment histories, lab results,
+                  diagnoses, and health insurance billing details.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded">
+                <h6>Special Category Data</h6>
+                <p class="small text-muted">
+                  Highly sensitive data revealing racial origin, political
+                  opinions, religious beliefs, sexual orientation, or
+                  disabilities.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded">
+                <h6>Financial & Corporate Data</h6>
+                <p class="small text-muted">
+                  Credit ratings, tax info, transaction histories, and trade
+                  secrets critical to a company's competitive edge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="capitalism" class="mb-5">
+        <div class="content-card bg-dark text-white p-5">
+          <h2 class="text-white mb-4">
+            The Business Model of Surveillance Capitalism
+          </h2>
+          <p class="lead">
+            In this economic system, human experience is treated as a "raw
+            material" to be translated into behavioral data.
+          </p>
+          <p>
+            This data is harvested and sold to third parties to predict and
+            influence future behavior, effectively commodifying our personal
+            lives without our full understanding or consent.
+          </p>
+
+          <h4 class="text-terracotta mt-5">
+            Major Problems with Informed Consent
+          </h4>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-3">
+              <strong>Information Asymmetry:</strong> Companies have a total
+              understanding of what they are collecting and why; the users do
+              not.
+            </li>
+            <li class="mb-3">
+              <strong>Lack of Readability:</strong> Privacy policies are often
+              long, legally dense, and effectively unreadable for the average
+              person.
+            </li>
+            <li>
+              <strong>The "Take It or Leave It" Problem:</strong> Users are
+              often forced to agree to policies to use essential services,
+              making the idea of free choice an illusion.
+            </li>
+          </ul>
+
+          <div class="image-placeholder-box bg-white text-dark mt-4">
+            <span class="placeholder-icon">🕵️</span>
+            <p class="fw-bold">Surveillance Capitalism Cycle Diagram</p>
+            <p class="small">
+              Illustration of human experience being converted to behavioral
+              data (Slide 16).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="law" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Republic Act No. 10173: Data Privacy Act of 2012</h2>
+          <p>
+            Landmark legislation signed by President Benigno S. Aquino III to
+            protect personal information across public and private sectors while
+            ensuring the free flow of information for innovation.
+          </p>
+
+          <div class="row g-4 mt-4 text-center">
+            <div class="col-md-4">
+              <span class="badge-privacy">Transparency</span>
+              <p class="small mt-2">
+                Subjects must be informed about how their data is collected and
+                processed.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <span class="badge-privacy">Legitimate Purpose</span>
+              <p class="small mt-2">
+                Personal data must only be collected for specific and legal
+                reasons.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <span class="badge-privacy">Proportionality</span>
+              <p class="small mt-2">
+                Collection must be adequate, relevant, and limited to what is
+                truly necessary.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5 p-4 bg-light rounded">
+            <h5>Rights of the Data Subject</h5>
+            <div class="row g-3 small mt-2">
+              <div class="col-md-4">
+                <strong>Right to be Informed:</strong> Knowing that processing
+                is occurring.
+              </div>
+              <div class="col-md-4">
+                <strong>Right to Object:</strong> Stopping the processing of
+                your data.
+              </div>
+              <div class="col-md-4">
+                <strong>Right to Access:</strong> Requesting a copy of your
+                personal data.
+              </div>
+              <div class="col-md-4">
+                <strong>Right to Rectification:</strong> Correcting inaccurate
+                information.
+              </div>
+              <div class="col-md-4">
+                <strong>Right to Erasure:</strong> Removing data from filing
+                systems.
+              </div>
+              <div class="col-md-4">
+                <strong>Right to Portability:</strong> Moving data easily
+                between controllers.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-4 p-4 border-start border-4 border-terracotta bg-white"
+          >
+            <h5>Breach Accountability</h5>
+            <p class="mb-0">
+              Organizations must designate a
+              <strong>Data Protection Officer (DPO)</strong> and notify the
+              National Privacy Commission (NPC) and subjects within
+              <strong>72 hours</strong> of a breach that poses a serious risk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="it-prof" class="mb-5">
+        <div class="content-card">
+          <h2 class="mb-4">The IT Professional's Ethical Duty</h2>
+          <p>
+            IT professionals are accountable for ensuring that personal data is
+            handled in an ethical, transparent, and legally compliant manner.
+            Their duties go beyond simple network security.
+          </p>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-6">
+              <ul class="list-custom">
+                <li>
+                  <strong>Confidentiality:</strong> Implementing robust
+                  protocols to keep sensitive data secure from unauthorized
+                  access.
+                </li>
+                <li>
+                  <strong>Integrity:</strong> Handling data with honesty; never
+                  manipulating information for personal gain.
+                </li>
+                <li>
+                  <strong>Accountability:</strong> Taking responsibility for
+                  decisions, documenting processes, and addressing mistakes
+                  openly.
+                </li>
+                <li>
+                  <strong>Data Minimization:</strong> Storing only the data that
+                  is absolutely necessary for the declared purpose.
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="p-4 bg-light rounded">
+                <h6>Best Practices for the Field</h6>
+                <ul class="small">
+                  <li>
+                    <strong>Privacy by Design:</strong> Incorporating privacy
+                    considerations into system architecture from the start.
+                  </li>
+                  <li>
+                    <strong>Access Control:</strong> Ensuring employees only
+                    access data needed for their specific jobs.
+                  </li>
+                  <li>
+                    <strong>Incident Response:</strong> Developing well-defined
+                    plans to detect and investigate security incidents.
+                  </li>
+                  <li>
+                    <strong>Data Lifecycle:</strong> Managing the data journey
+                    from collection to safe disposal.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder-box">
+            <span class="placeholder-icon">💻</span>
+            <p class="fw-bold">IT Professionals in Action Diagram</p>
+            <p class="small">
+              Insert visual of security protocols and privacy architecture
+              (Slide 26).
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="text-center">
+      <div class="container">
+        <p class="fw-bold mb-1">
+          CITE: College of Information Technology and Engineering
+        </p>
+        <p class="small mb-4">
+          Polytechnic University of the Philippines - Biñan Campus
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <p class="small opacity-75">Instructor: Rowell L. Marquina</p>
+            <p class="small opacity-50">
+              This informative portal serves as a comprehensive study resource
+              for Lesson 2: Data Privacy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPiC Lesson 4: Data Privacy Act of 2012 | PUP Biñan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-green: #2d5a27;
+        --soft-sage: #a3b18a;
+        --terracotta: #e07a5f;
+        --cream: #fdfcf0;
+        --dark-gray: #343a40;
+      }
+
+      body {
+        background-color: var(--cream);
+        font-family: "Lato", sans-serif;
+        color: var(--dark-gray);
+        scroll-behavior: smooth;
+        line-height: 1.8;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .navbar-brand {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary-green) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        color: #fff !important;
+      }
+      .nav-link:hover,
+      .dropdown-item:hover {
+        color: var(--soft-sage) !important;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .dropdown-menu {
+        background-color: var(--primary-green);
+        border: 1px solid var(--soft-sage);
+      }
+      .dropdown-item {
+        color: #fff !important;
+      }
+
+      /* Hero */
+      .hero {
+        background:
+          linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.9)),
+          url("https://www.transparenttextures.com/patterns/paper.png");
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+      }
+
+      /* Content Elements */
+      .content-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 50px;
+      }
+      .accent-line {
+        width: 60px;
+        height: 5px;
+        background-color: var(--terracotta);
+        margin-bottom: 30px;
+      }
+      .accent-line-center {
+        width: 60px;
+        height: 5px;
+        background-color: var(--terracotta);
+        margin: 0 auto 30px;
+      }
+
+      /* Alternating Principle Layout */
+      .principle-num {
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--soft-sage);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .principle-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border-bottom: 5px solid var(--terracotta);
+      }
+
+      /* Image Placeholder Styling */
+      .image-placeholder-box {
+        background-color: #fff;
+        border: 2px dashed var(--soft-sage);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 250px;
+        color: var(--soft-sage);
+        margin: 20px 0;
+        text-align: center;
+        padding: 20px;
+        transition: all 0.3s ease;
+      }
+      .image-placeholder-box:hover {
+        border-color: var(--terracotta);
+        color: var(--terracotta);
+        background-color: #fcfdf9;
+      }
+
+      footer {
+        background-color: var(--primary-green);
+        color: white;
+        padding: 60px 0;
+        margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">SPiC PORTAL</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="L1.html">Lesson 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L2.html">Lesson 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L3.html">Lesson 3</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Lesson 4</a
+              >
+              <ul class="dropdown-menu mx-auto text-center">
+                <li>
+                  <a class="dropdown-item" href="#intro"
+                    >Introduction to RA 10173</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#objectives">Key Objectives</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#principles"
+                    >Privacy Principles</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#rights"
+                    >Data Subject Rights</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#processing"
+                    >Data Processing</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="L5.html">Lesson 5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container">
+        <p class="text-uppercase fw-bold mb-3" style="letter-spacing: 4px">
+          Lesson 4: Data Privacy Act of 2012
+        </p>
+        <h1 class="display-3 fw-bold">The Shield of Personal Information</h1>
+        <p class="lead mt-3">
+          Comprehensive Regulation and Protection under Republic Act No. 10173
+        </p>
+      </div>
+    </header>
+
+    <div class="container mt-5">
+      <section id="intro" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">What is the Data Privacy Act?</h2>
+          <p class="lead">
+            The Data Privacy Act of 2012, officially termed Republic Act 10173,
+            is a crucial law in the Philippines that regulates the processing of
+            personal information to protect privacy rights.
+          </p>
+
+          <div class="image-placeholder-box mt-4">
+            <span class="fs-1">📄</span>
+            <p class="fw-bold">Legal Foundation Concept</p>
+            <p class="small">
+              Visual: Banner design representing folder security and
+              username/password protection (Slide 3).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="objectives" class="mb-5">
+        <div class="text-center mb-5">
+          <div class="accent-line-center"></div>
+          <h2 class="display-5">Core Objectives of the Act</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 800px">
+            RA 10173 was established with two primary goals: safeguarding human
+            rights while fostering technological growth.
+          </p>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6">
+            <div class="principle-card">
+              <div class="principle-num">01</div>
+              <h3 class="mb-3">Protect Individual Privacy</h3>
+              <p>
+                The core aim is to safeguard the fundamental human right of
+                privacy in relation to the processing of personal information.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="image-placeholder-box">
+              <span class="fs-1">👤</span>
+              <p class="small text-center">
+                Visual: Data security and insurance policy business concepts
+                (Slide 4).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-5 g-5">
+          <div class="col-md-6 order-md-2">
+            <div class="principle-card">
+              <div class="principle-num">02</div>
+              <h3 class="mb-3">Ensure Free Flow of Information</h3>
+              <p>
+                The Act seeks to balance privacy protection with the free flow
+                of information to promote innovation and growth.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="image-placeholder-box">
+              <span class="fs-1">🔄</span>
+              <p class="small text-center">
+                Visual: Information exchange and growth cycle symbols.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Data Privacy Principles</h2>
+          <p>
+            Organizations must adhere to four fundamental principles to ensure
+            the legal and ethical handling of data.
+          </p>
+
+          <div class="row g-4 mt-3">
+            <div class="col-md-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-success h-100"
+              >
+                <h5 class="text-success">Transparency</h5>
+                <p class="small">
+                  Organizations must provide clear and open communication about
+                  how they collect, use, and share personal data.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-success h-100"
+              >
+                <h5 class="text-success">Legitimate Purpose</h5>
+                <p class="small">
+                  The collection and processing of personal data must have a
+                  specific, appropriate, and lawful purpose.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-success h-100"
+              >
+                <h5 class="text-success">Proportionality</h5>
+                <p class="small">
+                  Only the necessary amount of data should be collected to
+                  fulfill the stated purpose.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-success h-100"
+              >
+                <h5 class="text-success">Accountability</h5>
+                <p class="small">
+                  Organizations are responsible for ensuring the security and
+                  proper handling of personal data under their control.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="image-placeholder-box mt-4">
+            <span class="fs-1">✅</span>
+            <p class="fw-bold">Compliance Checklist Visual</p>
+            <p class="small">
+              Visual: Illustrating organizational responsibility and secure data
+              handling (Slide 8-9).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="rights" class="mb-5">
+        <div class="content-card bg-dark text-white p-5">
+          <h2 class="text-white mb-4 text-center">
+            Rights of the Data Subject
+          </h2>
+          <p class="lead text-center mb-5">
+            RA 10173 empowers individuals with specific rights to control their
+            personal information.
+          </p>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="p-3 border rounded h-100">
+                <h6 class="text-terracotta">Right to be Informed</h6>
+                <p class="small opacity-75">
+                  Knowing how personal data will be processed.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded h-100">
+                <h6 class="text-terracotta">Right to Access</h6>
+                <p class="small opacity-75">
+                  Accessing your own personal data held by organizations.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded h-100">
+                <h6 class="text-terracotta">Right to Object</h6>
+                <p class="small opacity-75">
+                  Stopping processing for direct marketing, profiling, or
+                  automated processing.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded h-100">
+                <h6 class="text-terracotta">Right to Rectification</h6>
+                <p class="small opacity-75">
+                  Correcting or updating inaccurate data.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded h-100">
+                <h6 class="text-terracotta">Right to Erasure/Blocking</h6>
+                <p class="small opacity-75">
+                  Requesting the deletion or blocking of personal data.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border rounded h-100">
+                <h6 class="text-terracotta">Right to Data Portability</h6>
+                <p class="small opacity-75">
+                  Receiving personal data in a portable format for your own use.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="processing" class="mb-5">
+        <div class="content-card">
+          <div class="accent-line"></div>
+          <h2 class="mb-4">Understanding Data Processing</h2>
+          <p>
+            Data Processing refers to any operation performed upon personal
+            information, including collection, organization, storage, and
+            destruction.
+          </p>
+
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+              <div
+                class="p-4 bg-light rounded shadow-sm border-start border-4 border-terracotta"
+              >
+                <h5 class="text-terracotta">Key Processing Principles</h5>
+                <ul class="small mt-2">
+                  <li>Lawfulness, Fairness, and Transparency</li>
+                  <li>Purpose Limitation</li>
+                  <li>Data Minimization</li>
+                  <li>Storage Limitation</li>
+                  <li>Integrity and Confidentiality</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="image-placeholder-box">
+                <span class="fs-1">⚙️</span>
+                <p class="fw-bold">Data Management Lifecycle</p>
+                <p class="small">
+                  Visual: Concept illustration of data processing operations
+                  (Slide 13-14).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="text-center">
+      <div class="container">
+        <p class="fw-bold mb-1">
+          CITE: College of Information Technology and Engineering
+        </p>
+        <p class="small mb-4">
+          Polytechnic University of the Philippines - Biñan Campus
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <p class="small opacity-75">Instructor: Rowell L. Marquina</p>
+            <p class="small opacity-50">
+              This informative portal provides a complete study resource for
+              Republic Act No. 10173.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
